@@ -98,16 +98,19 @@
     Te amo, profundamente.
   </div>
   
-  <div id="mensajeExtra">
+  <div id="mensajeExtra2">
     No te preocupes, yo siempre estaré cariño.
     Te amo, profundamente.
   </div>
 
   <script>
     function mostrarMensaje() {
-      document.getElementById("mensajeExtra").style.display = "block";
-    }
+    document.getElementById("mensajeExtra").style.display = "block";
 
+    setTimeout(() => {
+      document.getElementById("mensajeExtra2").style.display = "block";
+    }, 4000);
+      
     function crearCorazon() {
       const heart = document.createElement('div');
       heart.className = 'heart';
