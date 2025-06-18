@@ -53,7 +53,7 @@
       background: #ec407a;
     }
 
-    #mensajeExtra {
+    #mensajeExtra, #mensajeExtra2 {
       margin-top: 30px;
       font-weight: bold;
       font-size: 1.1em;
@@ -85,36 +85,38 @@
   </style>
 </head>
 <body>
-  <audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio HTML5.
+
+  <audio id="musica" autoplay loop hidden>
+    <source src="musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
   </audio>
-  
+
   <h1>Hola, mi niña preciosa 💖</h1>
-  <p>Que tal anda la niña más bonita, de la que ando enamorado? ojala esto ayude algo la verdad, por que yo quiero hacerte compañia siempre mi niña.</p>
+  <p>¿Qué tal anda la niña más bonita, de la que ando enamorado? Ojalá esto ayude algo, la verdad, porque yo quiero hacerte compañía siempre, mi niña.</p>
   <p>Estoy aquí, siempre para abrazarte con palabras cuando el mundo te pese.</p>
   <p>Si tuviste una mala noche, esta página está aquí para recordarte cuánto te amo y cuán especial eres para mí.</p>
 
-  <button onclick="mostrarMensaje()">Tocame 🫶</button>
+  <button onclick="mostrarMensaje()">Tócame 🫶</button>
 
   <div id="mensajeExtra">
-    Te acompañare aunque estés cansada, aunque no digas nada, estando mal, estare siempre en la manera que necesites.  
+    Te acompañaré aunque estés cansada, aunque no digas nada, estando mal, estaré siempre de la manera que necesites.  
     Te amo, profundamente.
   </div>
-  
+
   <div id="mensajeExtra2">
-    No te preocupes, yo siempre estaré cariño.
+    No te preocupes, yo siempre estaré, cariño.  
     Te amo, profundamente.
   </div>
 
   <script>
     function mostrarMensaje() {
-    document.getElementById("mensajeExtra").style.display = "block";
+      document.getElementById("mensajeExtra").style.display = "block";
 
-    setTimeout(() => {
-      document.getElementById("mensajeExtra2").style.display = "block";
-    }, 4000);
-      
+      setTimeout(() => {
+        document.getElementById("mensajeExtra2").style.display = "block";
+      }, 4000);
+    }
+
     function crearCorazon() {
       const heart = document.createElement('div');
       heart.className = 'heart';
