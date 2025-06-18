@@ -53,8 +53,7 @@
       background: #ec407a;
     }
 
-    #mensajeExtra,
-    #mensajeExtra2 {
+    #mensajeExtra, #mensajeExtra2 {
       margin-top: 30px;
       font-weight: bold;
       font-size: 1.1em;
@@ -86,25 +85,25 @@
   </style>
 </head>
 <body>
-  <audio id="musica" autoplay loop>
+  <audio id="musica" loop>
     <source src="musica.mp3" type="audio/mpeg">
     Tu navegador no soporta audio HTML5.
   </audio>
-
+  
   <h1>Hola, mi niña preciosa 💖</h1>
-  <p>¿Qué tal anda la niña más bonita, de la que ando enamorado? Ojalá esto ayude un poquito, porque quiero hacerte compañía siempre, mi niña.</p>
+  <p>¿Qué tal anda la niña más bonita, de la que ando enamorado? Ojalá esto ayude algo la verdad, porque yo quiero hacerte compañía siempre mi niña.</p>
   <p>Estoy aquí, siempre para abrazarte con palabras cuando el mundo te pese.</p>
   <p>Si tuviste una mala noche, esta página está aquí para recordarte cuánto te amo y cuán especial eres para mí.</p>
 
   <button onclick="mostrarMensaje()">Tócame 🫶</button>
 
   <div id="mensajeExtra">
-    Te acompañaré aunque estés cansada, aunque no digas nada, aunque estés mal... estaré siempre de la manera que necesites.  
+    Te acompañaré aunque estés cansada, aunque no digas nada, estando mal, estaré siempre en la manera que necesites.  
     Te amo, profundamente.
   </div>
-
+  
   <div id="mensajeExtra2">
-    No te preocupes, yo siempre estaré, cariño.  
+    No te preocupes, yo siempre estaré cariño.
     Te amo, profundamente.
   </div>
 
@@ -115,22 +114,29 @@
       setTimeout(() => {
         document.getElementById("mensajeExtra2").style.display = "block";
       }, 4000);
+
+      // Iniciar música
+      const musica = document.getElementById("musica");
+      musica.play().catch((e) => {
+        console.log("No se pudo reproducir la música automáticamente:", e);
+      });
+
+      // Corazones flotantes
+      function crearCorazon() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (5 + Math.random() * 3) + 's';
+        heart.innerText = '💖';
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 8000);
+      }
+
+      setInterval(crearCorazon, 500);
     }
-
-    function crearCorazon() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (5 + Math.random() * 3) + 's';
-      heart.innerText = '💖';
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 8000);
-    }
-
-    setInterval(crearCorazon, 500);
   </script>
 </body>
 </html>
