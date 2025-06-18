@@ -60,6 +60,13 @@
       display: none;
       color: #6a1b9a;
     }
+    #mensajeFinal {
+      margin-top: 30px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #ad1457;
+      display: none;
+    }
 
     .heart {
       position: absolute;
@@ -105,8 +112,12 @@
     Y eso es lo que yo siempre te daré, no le des tanta vuelta, si te sientes insegura de mi o te molesta algo, dimelo, somos un equipo. y yo quiero ser tu apoyo de toda la vida, por que yo quiero que te sientas tranquila, escuchada, acompañada, amada como yo lo estoy contigo mi niña.
     No te preocupes, yo siempre estaré para ti sin dudarlo cariño.
     Te amo, profundamente.
-    Tu Gonza 💖
   </div>
+  
+  <div id="mensajeFinal">
+  Tu Gonza 💖
+  </div>
+
 
   <script>
     function mostrarMensaje() {
@@ -115,6 +126,9 @@
       setTimeout(() => {
         document.getElementById("mensajeExtra2").style.display = "block";
       }, 4000);
+      setTimeout(() => {
+        document.getElementById("mensajeFinal").style.display = "block";
+      }, 3000);
 
       // Iniciar música
       const musica = document.getElementById("musica");
